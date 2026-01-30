@@ -1,6 +1,7 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
-public class MaxElement {
+public class KthSmallest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -11,14 +12,15 @@ public class MaxElement {
             arr[i] = sc.nextInt();
         }
 
-        int max = arr[0];
+        int k = sc.nextInt();
 
-        for (int i = 1; i < n; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-            }
+        Arrays.sort(arr);
+
+        if (k > 0 && k <= n) {
+            System.out.println(arr[k - 1]);
+        } else {
+            System.out.println("Invalid K");
         }
-
-        System.out.println(max);
     }
 }
+
